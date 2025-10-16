@@ -6,7 +6,7 @@
 /*   By: yabounna <yabounna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:51:06 by yabounna          #+#    #+#             */
-/*   Updated: 2025/10/09 10:48:57 by yabounna         ###   ########.fr       */
+/*   Updated: 2025/10/16 09:52:49 by yabounna         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -15,19 +15,12 @@
 #include <cctype>
 
 
-void to_upper(int  ac,char **av)
+void to_upper(std::string str)
 {
-    int i = 0;
-    int j = 0;
-    
-    for (i = 1; i < ac; i++)
+    for (int j = 0 ; str[j]  ; j++ )
     {
-        for (j = 0 ; av[i][j]  ; j++ )
-        {
-            std::cout <<  (char)std::toupper(av[i][j]);
-        }
+        std::cout <<  (char)std::toupper(str[j]);
     }
-    std::cout << std::endl;
 }
 
 
@@ -36,8 +29,9 @@ int main(int ac, char **av) {
     if (ac == 1)
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
     else {
-        to_upper(ac, av);
+        for(int  i = 1; i < ac ; i++)
+            to_upper(av[i]);
+        std::cout << std::endl;
     }
-
     return 0;
 }
