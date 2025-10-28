@@ -1,4 +1,4 @@
-NAME = PhoneBook
+NAME = phonebook
 
 CC = c++
 

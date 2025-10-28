@@ -1,25 +1,25 @@
 #ifndef CONTACT_HPP
-    #define CONTACT_HPP
+# define CONTACT_HPP
 
-#include <string>
-#include <iostream>
+# include <string>
 
-class Contact
-{
+class Contact {
 private:
-    std::string prenom;
-    std::string nom;
-    std::string nick_name;
-    std::string numero_tele;
-    std::string secret;
+    std::string first_name;
+    std::string last_name;
+    std::string nickname;
+    std::string phone_number;
+    std::string darkest_secret;
+    bool        is_initialized;
 
 public:
-    // hade methobe bach initialisiwe contact
-    void init_cont(std::string prenom,
-                    std::string nom,
-                    std::string nick_name,
-                    std::string numero_tele,
-                    std::string secret);
+    Contact(); // constructeur par défaut
+
+    void setContact(const std::string &first,
+                    const std::string &last,
+                    const std::string &nick,
+                    const std::string &phone,
+                    const std::string &secret);
 
     std::string getFirstName() const;
     std::string getLastName() const;
@@ -27,20 +27,8 @@ public:
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
 
-    std::string tableau(std::string field) const;
-    bool if_rien() const;
+    std::string truncateField(const std::string &field) const;
+    bool isEmpty() const;
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif
