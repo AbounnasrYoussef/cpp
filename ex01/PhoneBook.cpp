@@ -2,8 +2,21 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <cctype>
 
-PhoneBook::PhoneBook() : current_index(0), stored_count(0) {}//C’est le constructeur par défaut de la classe PhoneBook.
+
+
+PhoneBook::PhoneBook() : current_index(0), stored_count(0) {}
+
+
+bool isPrintableString(const std::string& str) {
+    for (size_t i = 0; i < str.length(); i++) {
+        if (!isprint(str[i]))
+            return false;
+    }
+    return true;
+}
+
 
 void PhoneBook::addContact()
 {
@@ -11,23 +24,28 @@ void PhoneBook::addContact()
 
     std::cout << "Enter first name: ";
     std::getline(std::cin, first);
-    if (!std::cin) return; //vérifie si la saisie a échoué
+    if (!std::cin || first.empty() || !isPrintableString(first))
+        return;
 
     std::cout << "Enter last name: ";
     std::getline(std::cin, last);
-    if (!std::cin) return;
+    if (!std::cin || last.empty() || !isPrintableString(last))
+        return;
 
     std::cout << "Enter nickname: ";
     std::getline(std::cin, nick);
-    if (!std::cin) return;
+    if (!std::cin || nick.empty() || !isPrintableString(nick))
+        return;
 
     std::cout << "Enter phone number: ";
     std::getline(std::cin, phone);
-    if (!std::cin) return;
+    if (!std::cin || phone.empty() || !isPrintableString(phone))
+        return;
 
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, secret);
-    if (!std::cin) return;
+    if (!std::cin || secret.empty() || !isPrintableString(secret))
+        return;
 
     Contact tmp;
     tmp.setContact(first, last, nick, phone, secret);
@@ -40,7 +58,7 @@ void PhoneBook::addContact()
     std::cout << "Contact added successfully!" << std::endl;
 }
 
-void PhoneBook::displayContactsTable() const // indique que cette méthode ne modifie pas l’objet PhoneBook.
+void PhoneBook::displayContactsTable() const
 {
     std::cout << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"

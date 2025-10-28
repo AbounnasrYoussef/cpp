@@ -13,7 +13,7 @@ private:
     bool        is_initialized;
 
 public:
-    Contact(); // constructeur par défaut
+    Contact();
 
     void setContact(const std::string &first,
                     const std::string &last,

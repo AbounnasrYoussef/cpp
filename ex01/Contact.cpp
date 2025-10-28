@@ -10,11 +10,11 @@ void Contact::setContact(const std::string &first,
                          const std::string &secret)
 {
     if (first.empty() || last.empty() || nick.empty() || phone.empty() || secret.empty())
-    {
-        std::cout << "All fields must be non-empty!" << std::endl;
-        is_initialized = false;
-        return;
-    }
+    // {
+    //     std::cout << "All fields must be non-empty!" << std::endl;
+    //     is_initialized = false;
+    //     return;
+    // }
     first_name = first;
     last_name = last;
     nickname = nick;
