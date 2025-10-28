@@ -3,7 +3,7 @@
 #include <iomanip>
 #include <limits>
 
-PhoneBook::PhoneBook() : current_index(0), stored_count(0) {}
+PhoneBook::PhoneBook() : current_index(0), stored_count(0) {}//C’est le constructeur par défaut de la classe PhoneBook.
 
 void PhoneBook::addContact()
 {
@@ -11,7 +11,7 @@ void PhoneBook::addContact()
 
     std::cout << "Enter first name: ";
     std::getline(std::cin, first);
-    if (!std::cin) return;
+    if (!std::cin) return; //vérifie si la saisie a échoué
 
     std::cout << "Enter last name: ";
     std::getline(std::cin, last);
@@ -40,7 +40,7 @@ void PhoneBook::addContact()
     std::cout << "Contact added successfully!" << std::endl;
 }
 
-void PhoneBook::displayContactsTable() const
+void PhoneBook::displayContactsTable() const // indique que cette méthode ne modifie pas l’objet PhoneBook.
 {
     std::cout << std::setw(10) << "Index" << "|"
               << std::setw(10) << "First Name" << "|"
@@ -49,7 +49,7 @@ void PhoneBook::displayContactsTable() const
 
     for (int i = 0; i < stored_count; i++)
     {
-        const Contact &c = contacts[i];
+        Contact c = contacts[i];
         if (c.isEmpty()) continue;
         std::cout << std::setw(10) << i + 1 << "|"
                   << std::setw(10) << c.truncateField(c.getFirstName()) << "|"
