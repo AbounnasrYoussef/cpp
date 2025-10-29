@@ -25,11 +25,11 @@ int main()
             if (!std::cin) break;
 
             std::istringstream iss(line);
-            int idx;
-            if (!(iss >> idx))
+            int index;
+            if (!(iss >> index))
                 std::cout << "Invalid input." << std::endl;
             else
-                phonebook.showContactByIndex(idx);
+                phonebook.showContactByIndex(index);
         }
         else if (command == "EXIT")
             break;
