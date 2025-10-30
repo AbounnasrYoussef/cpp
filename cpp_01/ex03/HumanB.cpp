@@ -1,0 +1,36 @@
+#include "HumanB.hpp"
+
+
+HumanB::HumanB(){
+	weapon = NULL;
+}
+
+
+HumanB::HumanB(std::string name)
+{
+	name = name;
+	weapon = NULL;
+}
+HumanB::~HumanB()
+{
+
+}
+
+void HumanB::attack()
+{
+	if(weapon != NULL)
+	{
+		std::cout<< name << " attacks with their " <<  weapon->getType() << std::endl;
+	}
+	else 
+	{
+		std::cout<< "error " << std::endl;
+	}
+}
+
+
+void HumanB::setWeapon(Weapon &wepon)
+{
+	weapon = &wepon;
+}
+
