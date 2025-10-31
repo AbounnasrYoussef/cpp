@@ -26,14 +26,14 @@ int main(int ac , char **av)
             return 1;
         }
 
-        std::ifstream inputFile(file);
+        std::ifstream inputFile(file.c_str());
         if(!inputFile.is_open())
         {
             std::cerr<< "error , impossible d'ouvrir le fichier !" << std::endl;
             return 1;
         }
 
-        std::ofstream outputFile(file + ".replace");
+        std::ofstream outputFile((file + ".replace").c_str());
         if(!outputFile.is_open())
         {
             std::cout<< "error , impossible de creer le fichier !" << std::endl;
@@ -60,8 +60,7 @@ int main(int ac , char **av)
      // Fermer le fichier de sortie
         outputFile.close();
 
-        std::cout << "✅ Remplacement terminé avec succès ! Fichier créé : "
-              << file + ".replace" << std::endl;
+        std::cout << " Remplacement terminé avec succès "<< std::endl;
 
 
 
