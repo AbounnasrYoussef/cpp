@@ -8,7 +8,7 @@ HumanB::HumanB(){
 
 HumanB::HumanB(std::string name)
 {
-	name = name;
+	this->name = name;
 	weapon = NULL;
 }
 HumanB::~HumanB()
