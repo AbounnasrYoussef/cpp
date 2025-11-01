@@ -39,14 +39,11 @@ int main(int ac , char **av)
             std::cout<< "error , impossible de creer le fichier !" << std::endl;
             return 1;
         }
-        // Lire tout le contenu du fichier dans une string
         std::string content((std::istreambuf_iterator<char>(inputFile)),
                          std::istreambuf_iterator<char>());
 
-         // Fermer le fichier d’entrée (bonne pratique)
         inputFile.close();
 
-    // Remplacer toutes les occurrences de s1 par s2
         size_t pos = content.find(s1);
         while (pos != std::string::npos)
         {
@@ -54,17 +51,11 @@ int main(int ac , char **av)
             pos = content.find(s1, pos + s2.length());
         }
 
-    // Écrire le contenu modifié dans le fichier de sortie
         outputFile << content;
 
-     // Fermer le fichier de sortie
         outputFile.close();
 
         std::cout << " Remplacement terminé avec succès "<< std::endl;
-
-
-
-
     }
     return 0;
 }
