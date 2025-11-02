@@ -2,7 +2,7 @@
 
 
 Zombie::Zombie() : name("Unnamed") {
-    std::cout << name << "created" << std::endl;
+    std::cout << name << " created" << std::endl;
 }
 
 

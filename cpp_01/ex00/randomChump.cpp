@@ -3,6 +3,6 @@
 
 void randomChump( std::string name )
 {
-    Zombie zombie(name); // hada creation local f stack
+    Zombie zombie(name);
     zombie.announce();
 }
