@@ -13,7 +13,7 @@ public:
 
     Weapon(std::string type);
 
-    std::string& getType();
+    const std::string& getType();
 
     std::string setType(std::string NewType);
 

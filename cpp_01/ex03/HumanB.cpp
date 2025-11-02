@@ -24,7 +24,7 @@ void HumanB::attack()
 	}
 	else 
 	{
-		std::cout<< "error " << std::endl;
+		std::cout<<  " attacks with their hands" << std::endl;
 	}
 }
 

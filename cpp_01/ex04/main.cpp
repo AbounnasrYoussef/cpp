@@ -19,6 +19,7 @@ int main(int ac , char **av)
         std::string file = av[1];
         std::string s1 = av[2];
         std::string s2 = av[3];
+        std::string content;
 
         if(s1.empty())
         {
@@ -32,16 +33,17 @@ int main(int ac , char **av)
             std::cerr<< "error , impossible d'ouvrir le fichier !" << std::endl;
             return 1;
         }
-
+        if (!std::getline(inputFile, content, '\0'))
+        {
+            std::cerr<< "error , impossible de lire le fichier ou le fichier est vide!" << std::endl;
+            return 1;
+        }
         std::ofstream outputFile((file + ".replace").c_str());
         if(!outputFile.is_open())
         {
             std::cout<< "error , impossible de creer le fichier !" << std::endl;
             return 1;
         }
-        std::string content((std::istreambuf_iterator<char>(inputFile)),
-                         std::istreambuf_iterator<char>());
-
         inputFile.close();
 
         size_t pos = content.find(s1);
