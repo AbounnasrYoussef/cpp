@@ -57,7 +57,7 @@ int main(int ac , char **av)
 
         outputFile.close();
 
-        std::cout << " Remplacement terminé avec succès "<< std::endl;
+        std::cout << "Remplacement termine avec succes"<< std::endl;
     }
     return 0;
 }

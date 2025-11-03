@@ -12,6 +12,9 @@ class Zombie
 private:
     std::string name;
 public:
+
+    Zombie();
+
     Zombie(std::string name);
 
     void announce(void);
@@ -30,13 +33,3 @@ void randomChump( std::string name );
 
 
 #endif
-
-//c()
-//{
-// a = t;
-// b = r;
-//}
-
-//c() : a(t),b(r); int a = 5;
-//{
-//}
