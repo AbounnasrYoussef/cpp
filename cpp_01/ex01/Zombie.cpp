@@ -23,6 +23,6 @@ Zombie::~Zombie(){
 };
 
 
-void Zombie::setName(const std::string &n) {
+void Zombie::setName(const std::string n) {
     name = n;
 }

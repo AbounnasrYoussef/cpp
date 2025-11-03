@@ -14,7 +14,7 @@ private:
 public:
     Zombie(std::string name);
 
-    void announce( void );
+    void announce(void);
 
     ~Zombie();
 };
@@ -30,3 +30,13 @@ void randomChump( std::string name );
 
 
 #endif
+
+//c()
+//{
+// a = t;
+// b = r;
+//}
+
+//c() : a(t),b(r); int a = 5;
+//{
+//}

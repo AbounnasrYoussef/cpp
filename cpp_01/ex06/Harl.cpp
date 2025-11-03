@@ -31,7 +31,7 @@ void Harl::complain(std::string level) {
         &Harl::error
     };
 
-            int n = -1;
+    int n = -1;
     for (int i = 0; i < 4; i++) {
         if (level == levels[i]) {
             n = i;
