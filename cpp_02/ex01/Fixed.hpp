@@ -3,6 +3,7 @@
 
 
 #include <iostream>
+#include <cmath>
 
 
 class Fixed
@@ -19,6 +20,14 @@ public:
 
     Fixed(const int a);
 
+    Fixed(const float b);
+
+    int toInt(void) const;
+
+
+    float toFloat(void) const;
+
+
 
 
     int getRawBits( void ) const;
@@ -29,6 +38,9 @@ public:
     ~Fixed();
 };
 
+
+
+    std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 
 

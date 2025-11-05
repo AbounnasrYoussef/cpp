@@ -21,8 +21,19 @@ Fixed::Fixed(const Fixed &other)
 
 
 
-// constractor 
+Fixed::Fixed(const int a)
+{
+    std::cout<<"int constructor called" << std::endl;
+    value = a << fractional_bit;
+}
 
+
+Fixed::Fixed(const float b)
+{
+    std::cout<<"float constructor called" <<std::endl;
+    value = roundf(b* (1 << fractional_bit));
+
+}
 
 
 Fixed &Fixed::operator=(const Fixed &other)
@@ -49,6 +60,24 @@ void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
     this->value = raw;
+}
+
+
+float Fixed::toFloat(void) const
+{
+    return (float)value / (1 << fractional_bit);
+}
+
+int Fixed::toInt(void) const
+{
+    return value >> fractional_bit;
+}
+
+
+std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
+{
+    os << fixed.toFloat();
+    return os;
 }
 
 
