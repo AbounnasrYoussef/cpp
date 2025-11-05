@@ -17,7 +17,7 @@ public:
 
     Fixed &operator=(const Fixed &other);
 
-    Fixed(int a);
+    Fixed(const int a);
 
 
 
