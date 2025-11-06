@@ -1,8 +1,8 @@
 #include "Fixed.hpp"
 
-
 Fixed::Fixed() : value(0)
 {
+
 }
 
 Fixed::Fixed(const int n)
@@ -22,9 +22,8 @@ Fixed::Fixed(const Fixed &other)
 
 Fixed::~Fixed()
 {
+
 }
-
-
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
@@ -32,8 +31,6 @@ Fixed &Fixed::operator=(const Fixed &other)
 		value = other.value;
 	return *this;
 }
-
-
 
 int Fixed::getRawBits(void) const
 {
@@ -55,16 +52,35 @@ int Fixed::toInt(void) const
 	return value >> fractionalBits;
 }
 
+bool Fixed::operator>(const Fixed &other) const
+{
+	return value > other.value;
+}
 
+bool Fixed::operator<(const Fixed &other) const 
+{ 
+	return value < other.value; 
+}
 
-bool Fixed::operator>(const Fixed &other) const { return value > other.value; }
-bool Fixed::operator<(const Fixed &other) const { return value < other.value; }
-bool Fixed::operator>=(const Fixed &other) const { return value >= other.value; }
-bool Fixed::operator<=(const Fixed &other) const { return value <= other.value; }
-bool Fixed::operator==(const Fixed &other) const { return value == other.value; }
-bool Fixed::operator!=(const Fixed &other) const { return value != other.value; }
+bool Fixed::operator>=(const Fixed &other) const 
+{ 
+	return value >= other.value; 
+}
 
+bool Fixed::operator<=(const Fixed &other) const 
+{ 
+	return value <= other.value; 
+}
 
+bool Fixed::operator==(const Fixed &other) const 
+{ 
+	return value == other.value; 
+}
+
+bool Fixed::operator!=(const Fixed &other) const 
+{ 
+	return value != other.value; 
+}
 
 Fixed Fixed::operator+(const Fixed &other) const
 {
@@ -90,8 +106,6 @@ Fixed Fixed::operator/(const Fixed &other) const
 	}
 	return Fixed(this->toFloat() / other.toFloat());
 }
-
-
 
 Fixed &Fixed::operator++()
 {
@@ -119,28 +133,37 @@ Fixed Fixed::operator--(int)
 	return tmp;
 }
 
-
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-	return (a < b) ? a : b;
+    if (a < b)
+        return a;
+    else
+        return b;
 }
 
 const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
-	return (a < b) ? a : b;
+    if (a < b)
+        return a;
+    else
+        return b;
 }
 
 Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
-	return (a > b) ? a : b;
+    if (a > b)
+        return a;
+    else
+        return b;
 }
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
-	return (a > b) ? a : b;
+    if (a > b)
+        return a;
+    else
+        return b;
 }
-
-
 
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed)
 {

@@ -13,9 +13,13 @@ private:
 public:
 	
 	Fixed();
+
 	Fixed(const int n);
+
 	Fixed(const float n);
+
 	Fixed(const Fixed &other);
+
 	~Fixed();
 
 	
@@ -23,8 +27,11 @@ public:
 
 	
 	int     getRawBits(void) const;
+
 	void    setRawBits(int const raw);
+
 	float   toFloat(void) const;
+	
 	int     toInt(void) const;
 
 	
