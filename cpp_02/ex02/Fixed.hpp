@@ -7,8 +7,8 @@
 class Fixed
 {
 private:
-	int                 _value;
-	static const int    _fractionalBits = 8;
+	int                 value;
+	static const int    fractionalBits = 8;
 
 public:
 	
@@ -41,20 +41,19 @@ public:
 	Fixed operator*(const Fixed &other) const;
 	Fixed operator/(const Fixed &other) const;
 
-	// Incrémentation / Décrémentation
-	Fixed &operator++();     // pré-incrément
-	Fixed &operator--();     // pré-décrément
-	Fixed operator++(int);   // post-incrément
-	Fixed operator--(int);   // post-décrément
+	
+	Fixed &operator++();
+	Fixed &operator--();
+	Fixed operator++(int);
+	Fixed operator--(int);
 
-	// Fonctions min / max
 	static Fixed &min(Fixed &a, Fixed &b);
 	static const Fixed &min(const Fixed &a, const Fixed &b);
 	static Fixed &max(Fixed &a, Fixed &b);
 	static const Fixed &max(const Fixed &a, const Fixed &b);
 };
 
-// Surcharge de l’opérateur <<
+
 std::ostream &operator<<(std::ostream &os, const Fixed &fixed);
 
 #endif
