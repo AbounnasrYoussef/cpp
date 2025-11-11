@@ -9,9 +9,9 @@ class ClapTrap
 {
     private:
         std::string name;
-        int hitPoint = 10; // representer lina la vie 
-        int energyPoint = 10;
-        int attackDamage = 0;
+        unsigned int hitPoint; // ki representer lina la vie 
+        unsigned int energyPoint;
+        unsigned int attackDamage;
     public:
         ClapTrap();
 
