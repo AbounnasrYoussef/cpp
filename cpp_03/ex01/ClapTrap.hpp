@@ -6,34 +6,8 @@
 
 
 
-// class ClapTrap
-// {
-//     private:
-//         std::string name;
-//         unsigned int HitPoint;
-//         unsigned int EnergyPoint;
-//         unsigned int AttackDamage;
-//     public:
-//         ClapTrap();
-
-//         ClapTrap(std::string name);
-
-//         void attack(const std::string& target);
-
-//         void takeDamage(unsigned int amount);
-
-//         void beRepaired(unsigned int amount);
-
-//         ~ClapTrap();
-// };
-
-
-
-
-
-
 class ClapTrap {
-protected:    // au lieu de private
+protected:
     std::string name;
     unsigned int HitPoint;
     unsigned int EnergyPoint;
@@ -42,11 +16,13 @@ protected:    // au lieu de private
 public:
     ClapTrap();
     ClapTrap(const std::string& name);
-    ~ClapTrap();
+    ClapTrap(const ClapTrap &other);
+    ClapTrap &operator=(const ClapTrap &other);
 
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    ~ClapTrap();
 };
 
 
