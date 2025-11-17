@@ -1,13 +1,17 @@
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef  SCAVTRAP_HPP
+    #define SCAVTRAP_HPP
+
 
 #include "ClapTrap.hpp"
 #include <iostream>
 #include <string>
 
-class ScavTrap : public ClapTrap
-{
 
+
+
+class  ScavTrap : public ClapTrap
+{
+  
 public:
     ScavTrap();
 
@@ -20,5 +24,12 @@ public:
 
     ~ScavTrap();
 };
+
+
+
+
+
+
+
 
 #endif
