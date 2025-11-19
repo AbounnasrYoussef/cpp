@@ -1,9 +1,13 @@
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include <WrongAnimal.hpp>
+#include <WrongCat.hpp>
 
 int main()
 {
+    
+
     const Animal* a = new Animal();
     const Animal* d = new Dog();
     const Animal* c = new Cat();
@@ -12,6 +16,16 @@ int main()
     a->makeSound();
     d->makeSound();
     c->makeSound();
+    
+
+    
+    std::cout << "\n-- Testing sans polymorphisme --\n";
+    const WrongAnimal* wrong = new WrongCat();
+    // std::cout << wrong->getType() << std::endl;
+    wrong->makeSound();
+    delete wrong;
+
+
 
     std::cout << "\n-- Deleting objects --\n";
     delete a;
