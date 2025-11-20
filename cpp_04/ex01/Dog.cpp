@@ -19,8 +19,8 @@ Dog &Dog::operator=(const Dog &other)
     {
         this->type = other.type;
 
-        delete this->brain;                 // éviter fuite mémoire
-        this->brain = new Brain(*other.brain); // deep copy
+        delete this->brain;              
+        this->brain = new Brain(*other.brain);
     }
     std::cout << "[Dog] Copy assignment\n";
     return *this;

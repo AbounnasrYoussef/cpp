@@ -8,11 +8,13 @@ WrongAnimal::WrongAnimal() : type("WrongAnimal")
 WrongAnimal::WrongAnimal(const WrongAnimal &other)
 {
     *this = other;
+    std::cout << "copy constructor Worng Animal" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other)
 {
     this->type = other.type;
+    std::cout << "operator Worng Animal" << std::endl;
     return *this;
 }
 

@@ -12,7 +12,7 @@ public:
 
     ~WrongCat();
 
-    void makeSound() const; // override mais PAS virtual dans le parent
+    void makeSound() const;
 };
 
 #endif
