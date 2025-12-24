@@ -12,7 +12,7 @@ private:
     int grade;
 
 public:
-    Bureaucrat(std::string &nom, int grade);
+    Bureaucrat(const std::string &nom, int grade);
 
     Bureaucrat(const Bureaucrat &other);
 
