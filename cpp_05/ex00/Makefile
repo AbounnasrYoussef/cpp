@@ -1,18 +1,20 @@
-NAME = Bureaucrat
+NAME = bureaucrat
 
 CC = c++
-CCFLAGS = -Wall -Wextra -Werror --std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp
-OBJ = $(SRC:.cpp=.o)
 
-all: $(NAME)
+SRCS = main.cpp Bureaucrat.cpp
+OBJS = $(SRCS:.cpp=.o)
 
-$(NAME): $(OBJ)
-	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)
+all : $(NAME)
 
-%.o: %.cpp Bureaucrat.hpp
-	$(CC) $(CCFLAGS) -c $< -o $@
+$(NAME): $(OBJS) 
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp  Bureaucrat.hpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
 
 clean:
 	rm -f $(OBJ)
@@ -21,3 +23,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
