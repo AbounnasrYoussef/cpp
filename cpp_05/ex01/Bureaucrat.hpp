@@ -5,7 +5,7 @@
 # include <string>
 # include <stdexcept>
 
-class Form; // Forward declaration
+class Form;
 
 class Bureaucrat
 {

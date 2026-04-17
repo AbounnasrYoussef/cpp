@@ -57,7 +57,7 @@ int main()
 	{
 		Bureaucrat charlie("Charlie", 1);
 		ShrubberyCreationForm shrub2("garden");
-		charlie.executeForm(shrub2); // Not signed → should fail
+		charlie.executeForm(shrub2);
 	}
 	catch (std::exception& e)
 	{
@@ -70,7 +70,7 @@ int main()
 	{
 		Bureaucrat intern("Intern", 150);
 		PresidentialPardonForm pardon2("Ford Prefect");
-		intern.signForm(pardon2); // Grade 150 < required 25 → fail
+		intern.signForm(pardon2); 
 	}
 	catch (std::exception& e)
 	{
@@ -85,7 +85,7 @@ int main()
 		Bureaucrat low("Low", 100);
 		RobotomyRequestForm robot2("Marvin");
 		boss.signForm(robot2);
-		low.executeForm(robot2); // Grade 100 > required 45 → fail
+		low.executeForm(robot2); 
 	}
 	catch (std::exception& e)
 	{

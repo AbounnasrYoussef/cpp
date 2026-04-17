@@ -49,8 +49,7 @@ AForm* Intern::makeForm(const std::string& name, const std::string& target)
 		"presidential pardon"
 	};
 
-	typedef AForm* (Intern::*FormCreator)(const std::string&);
-	FormCreator creators[] = {
+	AForm* (Intern::*creators[])(const std::string&) = {
 		&Intern::createShrubbery,
 		&Intern::createRobotomy,
 		&Intern::createPresidential
