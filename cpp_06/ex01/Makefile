@@ -1,7 +1,7 @@
 NAME	= serializer
 
-CXX		= c++
-CXXFLAGS= -Wall -Wextra -Werror -std=c++98
+CC		= c++
+CCFLAGS= -Wall -Wextra -Werror -std=c++98
 
 SRC		= main.cpp Serializer.cpp
 OBJ		= $(SRC:.cpp=.o)
@@ -9,10 +9,10 @@ OBJ		= $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp Serializer.hpp Data.hpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
