@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp  functions.hpp Base.hpp A.hpp B.hpp C.hpp
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:

@@ -4,6 +4,7 @@
 
 int main(int ac , char **av)
 {
+    std::cout << av[1] << std::endl; 
     if (ac != 2)
     {
         std::cout << "Usage: ./convert <literal>" << std::endl;

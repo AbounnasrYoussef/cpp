@@ -6,3 +6,4 @@
 class C : public Base {};
 
 #endif
+
