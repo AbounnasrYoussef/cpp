@@ -3,6 +3,16 @@
 
 #include <string>
 
+enum eType
+{
+    CHAR,
+    INT,
+    FLOAT,
+    DOUBLE,
+    UNKNOWN,
+    SCIENTIFIQUE
+};
+
 class ScalarConverter
 {
     private:
@@ -14,5 +24,6 @@ class ScalarConverter
     public:
         static void convert(std::string const &s);
 };
+
 
 #endif
