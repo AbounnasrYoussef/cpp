@@ -1,0 +1,7 @@
+cpp07:
+    est chaque fonction en fait ca template?
+    comment fonctionne les template in compile time et runtime?
+    c'est quoi la difference entre class et template?
+    c'est quoi le role principale d'utiliser template?
+    pourquoi on fait 3 include pour les templates?
+    
