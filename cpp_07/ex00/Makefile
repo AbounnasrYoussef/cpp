@@ -2,7 +2,7 @@ NAME = templates
 
 CC = c++ 
 
-CCFLAGS = -Wall -Wextra -Wextra -std=c++98
+CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 SRC = main.cpp
