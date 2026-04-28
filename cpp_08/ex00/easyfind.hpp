@@ -21,6 +21,4 @@ int easyfind(T &container , int value)
 
 
 
-
-
 #endif
