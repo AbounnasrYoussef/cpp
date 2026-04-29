@@ -1,4 +1,4 @@
-NAME = Span
+NAME = MutantStack
 
 CC = c++ 
 
@@ -7,7 +7,7 @@ CCFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 
-SRC = main.cpp  Span.cpp
+SRC = main.cpp 
  
 OBJ = $(SRC:.cpp=.o)
 
@@ -16,7 +16,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	$(CC) $(CCFLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp Span.hpp
+%.o : %.cpp MutantStack.hpp
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 clean:
