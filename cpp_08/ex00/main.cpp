@@ -16,15 +16,15 @@ int main()
 
     try{
         int index = easyfind(v , 3);
-        std::cout << "l9a liya l'index :" << index << std::endl;
+        std::cout << "Trouve a l'index : " << index << std::endl;
     }
     catch(std::exception &e){
         std::cerr << e.what() << std::endl;
-    }
+    }  
 
     try{
         int index = easyfind(v , 9000);
-        std::cout << "l9a liya l'index :" << index << std::endl;
+        std::cout << "Trouve a l'index : " << index << std::endl;
     }
     catch(std::exception &e){
         std::cerr << e.what() << std::endl;
