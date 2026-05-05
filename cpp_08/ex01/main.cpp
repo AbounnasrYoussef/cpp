@@ -15,7 +15,7 @@ int main()
     std::cout << sp.shortestSpan() << std::endl;  
     std::cout << sp.longestSpan() << std::endl;   
 
-
+ 
     std::cout << "--- TEST 2 : exception addNumber ---" << std::endl;
     try
     {

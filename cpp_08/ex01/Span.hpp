@@ -25,7 +25,7 @@ class Span
         template <typename Iterator>
         void addRange(Iterator begin, Iterator end)
         {
-            if (_numbers.size() + std::distance(begin, end) > _max)
+            if ((_numbers.size() + std::distance(begin, end)) > _max)
                 throw std::runtime_error("Span is full");
             _numbers.insert(_numbers.end(), begin, end);
         }
