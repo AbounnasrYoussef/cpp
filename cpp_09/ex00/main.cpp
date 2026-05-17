@@ -7,14 +7,18 @@ int main(int ac, char **av)
 
     if (ac != 2)
     {
-        std::cerr << "Error: wrong number of arguments." << std::endl;
+        std::cout << "Error: could not open file." << std::endl;
         return 1;
     }
+    try
+    {
+        BitcoinExchange obj;
+        obj.file_traitement(av[1]);
+    }
+    catch(std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     
-    BitcoinExchange obj;
-    obj.file_traitement(av[1]);
-    
-
-
-
+   
 }
